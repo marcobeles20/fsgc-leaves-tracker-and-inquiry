@@ -27,7 +27,7 @@ function help()
 <br><br>
 Marc Jefferson B. Obeles
 <br>
-<a href = "mailto: marcobeles20@gmail.com">marcobeles20@gmail.com</a>
+<a href = "mailto: CHANGEME">CHANGEME</a>
 `
     )
     .setWidth(400)
