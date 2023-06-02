@@ -1,6 +1,8 @@
 const developer_mode = false;
-const developer_work_email = 'CHANGEME';
-const developer_recipient_email = 'CHANGEME'
+const developer_mode_work_email = 'CHANGEME';
+
+const developer_email = 'CHANGEME';
+const developer_name = 'CHANGEME';
 
 const leaves_tracker_spreadsheet_id = 'CHANGEME';
 const leaves_tracker_sheet_name = 'CHANGEME';
