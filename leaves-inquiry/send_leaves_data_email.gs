@@ -37,8 +37,6 @@ function send_leaves_data_email(email, reference_number)
 
   subject += ` (Ref# ${reference_number})`;
 
-  Logger.log(subject);
-
   let body = ``;
 
   body += `Hi`
