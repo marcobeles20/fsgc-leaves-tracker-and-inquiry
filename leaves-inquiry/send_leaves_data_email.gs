@@ -1,24 +1,3 @@
-function extract_leaves_data(email) 
-{
-  const leaves_tracker_spreadsheet = SpreadsheetApp.openById(leaves_tracker_spreadsheet_id);
-  const leaves_tracker_sheet = leaves_tracker_spreadsheet.getSheetByName(leaves_tracker_sheet_name);
-
-  const entries = leaves_tracker_sheet.getRange(
-    leaves_tracker_start_row, 
-    1, 
-    leaves_tracker_sheet.getLastRow() - leaves_tracker_start_row + 1,
-    leaves_tracker_sheet.getLastColumn()
-  ).getValues();
-
-  for(const i in entries)
-  {
-    if(entries[i][leaves_tracker_columns['work_email']] != email)
-      continue;
-    
-    return entries[i];
-  }
-}
-
 function send_leaves_data_email(email, reference_number)
 {
   const date = new Date;
@@ -141,4 +120,25 @@ This is an auto-generated message. Please do not reply.`
     htmlBody: body,
     name:     email_sender_name
   });
+}
+
+function extract_leaves_data(email) 
+{
+  const leaves_tracker_spreadsheet = SpreadsheetApp.openById(leaves_tracker_spreadsheet_id);
+  const leaves_tracker_sheet = leaves_tracker_spreadsheet.getSheetByName(leaves_tracker_sheet_name);
+
+  const entries = leaves_tracker_sheet.getRange(
+    leaves_tracker_start_row, 
+    1, 
+    leaves_tracker_sheet.getLastRow() - leaves_tracker_start_row + 1,
+    leaves_tracker_sheet.getLastColumn()
+  ).getValues();
+
+  for(const i in entries)
+  {
+    if(entries[i][leaves_tracker_columns['work_email']] != email)
+      continue;
+    
+    return entries[i];
+  }
 }
