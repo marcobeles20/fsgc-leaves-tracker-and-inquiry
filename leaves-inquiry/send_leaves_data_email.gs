@@ -21,24 +21,43 @@ function extract_leaves_data(email)
 
 function send_leaves_data_email(email, reference_number)
 {
+  const date = new Date;
+  const full_date = Utilities.formatDate(date, 'Asia/Manila', "MMM d, yyyy h:mm a");
+
+  const leaves_data = extract_leaves_data(email);
+  
   let subject = ``;
+
+  subject += `${leaves_inquiry_form_name}`;
+
+  if(leaves_data != null)
+  {
+    subject += `: ${leaves_data[leaves_tracker_columns['first_name']]} ${leaves_data[leaves_tracker_columns['last_name']]}`;
+  }
+
+  subject += ` (Ref# ${reference_number})`;
+
+  Logger.log(subject);
+
   let body = ``;
 
-  try
+  body += `Hi`
+
+  if(leaves_data != null)
   {
-    const date = new Date;
-    const full_date = Utilities.formatDate(date, 'Asia/Manila', "MMM d, yyyy h:mm a");
+    body += ` ${leaves_data[leaves_tracker_columns['first_name']]}`
+  }
 
-    const leaves_data = extract_leaves_data(email);
-
-    subject = `FSGC Leaves Inquiry: ${leaves_data[leaves_tracker_columns['first_name']]} ${leaves_data[leaves_tracker_columns['last_name']]} (Ref# ${reference_number})`;
-
-    body = 
-`Hi ${leaves_data[leaves_tracker_columns['first_name']]},
+  body += 
+`,
 <br><br>
-You are receiving this email because you inquired about your leaves through the <a href="CHANGEME">FSGC Leaves Inquiry</a> form.
-<br><br>
-Below, you will find the details of your used and remaining leaves for the current year.
+You are receiving this email because you inquired about your leaves through the <a href="${leaves_inquiry_form_link}">${leaves_inquiry_form_name} Form</a>.
+<br><br>`;
+
+  if(leaves_data != null)
+  {
+    body += 
+`Below, you will find the details of your used and remaining leaves for the current year.
 <br><br>
 <table border="1">
   <tr>
@@ -65,42 +84,63 @@ Below, you will find the details of your used and remaining leaves for the curre
     <td>Birthday Leave</td>
     <td><center>${leaves_data[leaves_tracker_columns['used_birthday_leaves']]}</center></td>
     <td><center>${leaves_data[leaves_tracker_columns['remaining_birthday_leaves']]}</center></td>
-  </tr>
-  <tr>
+  </tr>`;
+
+    if(leaves_data[leaves_tracker_columns['used_offset_leaves']] > 0)
+    {
+      body += 
+` <tr>
+    <td>Offset</td>
+    <td><center>${leaves_data[leaves_tracker_columns['used_offset_leaves']]}</center></td>
+    <td><center>N/A</center></td>
+  </tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['used_maternity_leaves']] > 0)
+    {
+      body +=
+` <tr>
+    <td>Maternity Leave</td>
+    <td><center>${leaves_data[leaves_tracker_columns['used_maternity_leaves']]}</center></td>
+    <td><center>N/A</center></td>
+  </tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['used_paternity_leaves']] > 0)
+    {
+      body +=
+` <tr>
+    <td>Paternity Leave</td>
+    <td><center>${leaves_data[leaves_tracker_columns['used_paternity_leaves']]}</center></td>
+    <td><center>N/A</center></td>
+  </tr>`;
+    }
+
+    body += 
+` <tr>
     <th><center>Total</center></th>
     <td><center>${leaves_data[leaves_tracker_columns['total_used_leaves']]}</center></td>
     <td><center>${leaves_data[leaves_tracker_columns['total_remaining_leaves']]}</center></td>
   </tr>
 </table>
 <br>
-Please note that the above information is current for <b>confirmed</b> leaves as of <b>${full_date} PHT</b>.
-<br><br>
-If you have any questions or concerns regarding your leaves or any other leave-related matters, please reach out to HR.
-<br><br>
-This is an auto-generated message.`
-    ;
+Please note that the above information is current for <b>confirmed</b> leaves as of <b>${full_date} PHT</b>.`;
   }
-  catch(error)
+  else
   {
-    subject = `FSGC Leaves Inquiry (Ref# ${reference_number})`;
-
-    body = 
-`Hi,
-<br><br>
-You are receiving this email because you inquired about your leaves through the <a href="CHANGEME">FSGC Leaves Inquiry</a> form.
-<br><br>
-Unfortunately, an error occurred while retrieving your used and remaining leaves for the current year.
-<br><br>
-If you have any questions or concerns regarding your leaves or any other leave-related matters, please reach out to HR.
-<br><br>
-This is an auto-generated message.
-`
-    ;
+    body += `Unfortunately, an error occurred while retrieving your used and remaining leaves for the current year.`
   }
 
-  MailApp.sendEmail({
-    to:       (developer_mode == false) ? email : developer_recipient_email,
+  body += 
+`<br><br>
+If you have any questions or concerns regarding your leaves or any other leave-related matters, please reach out to ${contact_name} through ${contact_medium}.
+<br><br>
+This is an auto-generated message. Please do not reply.`
+
+ MailApp.sendEmail({
+    to:       (developer_mode == false) ? email : developer_email,
     subject:  subject,
-    htmlBody: body
+    htmlBody: body,
+    name:     email_sender_name
   });
 }

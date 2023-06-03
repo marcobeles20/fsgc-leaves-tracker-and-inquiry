@@ -1,8 +1,7 @@
-const developer_mode = false;
-const developer_mode_work_email = 'CHANGEME';
+const contact_name = 'CHANGEME';
+const contact_medium = 'CHANGEME';
 
-const developer_email = 'CHANGEME';
-const developer_name = 'CHANGEME';
+const email_sender_name = 'CHANGEME';
 
 const leaves_tracker_spreadsheet_id = 'CHANGEME';
 const leaves_tracker_sheet_name = 'CHANGEME';
@@ -35,7 +34,19 @@ const leaves_inquiry_spreadsheet_id = 'CHANGEME';
 const leaves_inquiry_sheet_name = 'CHANGEME';
 const leaves_inquiry_start_row = 2;
 
+const leaves_inquiry_form_id = 'CHANGEME';
+
+const leaves_inquiry_form_response_trigger = 'CHANGEME';
+
+const leaves_inquiry_form_name = 'CHANGEME'
+const leaves_inquiry_form_link = 'CHANGEME';
+
 const leaves_inquiry_columns = {
   'timestamp':      0,
   'email_address':  1
 };
+
+const developer_mode = false;
+const developer_mode_work_email = 'CHANGEME';
+
+const developer_email = 'CHANGEME';

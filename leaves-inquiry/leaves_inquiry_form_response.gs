@@ -3,7 +3,7 @@ function leaves_inquiry_form_response(e)
   const email = e.response.getRespondentEmail();
 
   send_leaves_data_email(
-    (developer_mode == false) ? email : developer_work_email,
+    (developer_mode == false) ? email : developer_mode_work_email,
     extract_last_row_number(email) - leaves_inquiry_start_row + 1
   );
 }
@@ -31,13 +31,11 @@ function extract_last_row_number(email)
 
 function create_leaves_inquiry_form_response_trigger() 
 {
-  const trigger_name = "leaves_inquiry_form_response";
+  delete_trigger(leaves_inquiry_form_response_trigger);
 
-  delete_trigger(trigger_name);
+  const leaves_inquiry_form = FormApp.openById(leaves_inquiry_form_id);
 
-  const leaves_inquiry_form = FormApp.getActiveForm();
-
-  ScriptApp.newTrigger(trigger_name)
+  ScriptApp.newTrigger(leaves_inquiry_form_response_trigger)
     .forForm(leaves_inquiry_form)
     .onFormSubmit()
     .create();
