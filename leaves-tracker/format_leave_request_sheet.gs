@@ -144,3 +144,15 @@ function work_days_affected_formula(row)
 {
   return `=IF(ISBLANK($${column_number_to_letter(leave_request_columns['email_address'] + 1)}${row}), "", IFERROR(NETWORKDAYS($${column_number_to_letter(leave_request_columns['start_leave_date'] + 1)}${row}, $${column_number_to_letter(leave_request_columns['end_leave_date'] + 1)}${row}, INDIRECT("'"& $${column_number_to_letter(leave_request_columns['year'] + 1)}${row} &" Holidays'!$${column_number_to_letter(holidays_columns['date'] + 1)}$2:$${column_number_to_letter(holidays_columns['date'] + 1)}")), "ERROR"))`;
 }
+
+function column_number_to_letter(column_number)
+{
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = spreadsheet.getSheets()[0];
+  const range = sheet.getRange(
+    1, 
+    column_number,
+  );
+
+  return range.getA1Notation().slice(0, -1);
+}

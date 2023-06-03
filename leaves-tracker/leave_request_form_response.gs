@@ -1,8 +1,8 @@
 function leave_request_form_response(e)
 {
-  import_leaves_tracker_employees();
-
   const email = e.response.getRespondentEmail();
+
+  import_leaves_tracker_employees();
 
   format_leave_request_sheet(email);
 }
@@ -28,27 +28,13 @@ function extract_last_row_number(email)
   }
 }
 
-function column_number_to_letter(column_number)
-{
-  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = spreadsheet.getSheets()[0];
-  const range = sheet.getRange(
-    1, 
-    column_number,
-  );
-
-  return range.getA1Notation().slice(0, -1);
-}
-
 function create_leave_request_form_response_trigger() 
 {
-  const trigger_name = "leave_request_form_response";
-
-  delete_trigger(trigger_name);
+  delete_trigger(leave_request_form_response_trigger);
 
   const leave_request_form = FormApp.openById(leave_request_form_id);
 
-  ScriptApp.newTrigger(trigger_name)
+  ScriptApp.newTrigger(leave_request_form_response_trigger)
     .forForm(leave_request_form)
     .onFormSubmit()
     .create();

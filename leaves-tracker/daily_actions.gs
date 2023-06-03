@@ -7,11 +7,9 @@ function daily_actions()
 
 function create_daily_actions_trigger() 
 {
-  const trigger_name = "daily_actions";
+  delete_trigger(daily_actions_trigger);
 
-  delete_trigger(trigger_name);
-
-  ScriptApp.newTrigger(trigger_name)
+  ScriptApp.newTrigger(daily_actions_trigger)
     .timeBased()
     .everyDays(1)
     .atHour(0)

@@ -36,8 +36,6 @@ const leaves_inquiry_start_row = 2;
 
 const leaves_inquiry_form_id = 'CHANGEME';
 
-const leaves_inquiry_form_response_trigger = 'CHANGEME';
-
 const leaves_inquiry_form_name = 'CHANGEME'
 const leaves_inquiry_form_link = 'CHANGEME';
 
@@ -45,6 +43,8 @@ const leaves_inquiry_columns = {
   'timestamp':      0,
   'email_address':  1
 };
+
+const leaves_inquiry_form_response_trigger = 'CHANGEME';
 
 const developer_mode = false;
 const developer_mode_work_email = 'CHANGEME';

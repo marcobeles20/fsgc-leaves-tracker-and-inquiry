@@ -39,16 +39,16 @@ const hr_mastersheet_columns = {
 };
 
 const hr_mastersheet_excluded_sheets = [
-  '***-*****', 
+  'CHANGEME', 
   'Reg Alerts', 
   'Resigned'
 ];
 
-const leave_request_form_id = 'CHANGEME';
-
 const leave_request_spreadsheet_id = 'CHANGEME';
 const leave_request_sheet_name = 'CHANGEME';
 const leave_request_start_row = 2;
+
+const leave_request_form_id = 'CHANGEME';
 
 const leave_request_columns = {
   'timestamp':                          0,
@@ -97,3 +97,12 @@ const holidays_columns = {
   'name': 0,
   'date': 1
 }
+
+const daily_actions_trigger = 'CHANGEME';
+const leave_request_form_response_trigger = 'CHANGEME';
+
+const developer_name = 'CHANGEME';
+const developer_email = 'CHANGEME';
+
+const documentation_name = 'CHANGEME';
+const documentation_link = 'CHANGEME';

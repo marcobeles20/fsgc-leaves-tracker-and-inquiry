@@ -23,12 +23,11 @@ function help()
 
   const html_output = HtmlService
     .createHtmlOutput(
-`<a href="CHANGEME" target="_blank">FSGC Leaves Tracker and Inquiry Documentation</a>
+`<a href="${documentation_link}" target="_blank">${documentation_name}</a>
 <br><br>
-Marc Jefferson B. Obeles
+${developer_name}
 <br>
-<a href = "mailto: CHANGEME">CHANGEME</a>
-`
+<a href = "mailto: ${developer_email}">${developer_email}</a>`
     )
     .setWidth(400)
     .setHeight(100);
