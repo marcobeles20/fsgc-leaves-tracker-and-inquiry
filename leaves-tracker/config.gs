@@ -1,51 +1,57 @@
-const hr_mastersheet_spreadsheet_id = 'CHANGEME';
-const hr_mastersheet_start_row = 3;
+const employee_mastersheet_spreadsheet_id = 'CHANGEME';
+const employee_mastersheet_sheet_name = 'CHANGEME';
+const employee_mastersheet_start_row = 3;
 
-const hr_mastersheet_columns = {
+const employee_mastersheet_columns = {
   'id_number':                  0,
   'work_email':                 1,
-  'first_name':                 2,
-  'middle_name':                3,
-  'last_name':                  4,
-  'sex':                        5,
-  'gender':                     6,
-  'pronouns':                   7,
-  'birthday':                   8,
-  'cellphone_number':           9,
-  'present_address':            10,
-  'permanent_address':          11,
-  'personal_email':             12,
-  'contact_name':               13,
-  'contact_relationship':       14,
-  'contact_cellphone_number':   15,
-  'contact_email':              16,
-  'blood_type':                 17,
-  'allergies':                  18,
-  'medical_conditions':         19,
-  'entity':                     20,
-  'employment_type':            21,
-  'position':                   22,
-  'start_date':                 23,
-  'end_date':                   24,
-  'employment_agreement_link':  25,
-  'bank_name':                  26,
-  'bank_account_name':          27,
-  'bank_account_number':        28,
-  'bir_tin_number':             29,
-  'sss_number':                 30,
-  'philhealth_number':          31,
-  'pag_ibig_number':            32,
-  'id_link':                    33
+  'full_name':                  2,
+  'first_name':                 3,
+  'middle_name':                4,
+  'last_name':                  5,
+  'nickname':                   6,
+  'sex':                        7,
+  'gender':                     8,
+  'pronouns':                   9,
+  'birthday':                   10,
+  'age':                        11,
+  'mobile_number':              12,
+  'present_address':            13,
+  'permanent_address':          14,
+  'personal_email':             15,
+  'contact_name':               16,
+  'contact_relationship':       17,
+  'contact_cellphone_number':   18,
+  'contact_email':              19,
+  'blood_type':                 20,
+  'allergies':                  21,
+  'medical_conditions':         22,
+  'entity':                     23,
+  'employment_type':            24,
+  'position':                   25,
+  'level':                      26,
+  'manager':                    27,
+  'department':                 28,
+  'start_date':                 29,
+  '1st_month':                  30,
+  '3rd_month':                  31,
+  '5th_month':                  32,
+  'regularized_date':           33,
+  'promotion_date':             34,
+  'end_date':                   35,
+  'employment_agreement_link':  36,
+  'bank_name':                  37,
+  'bank_account_name':          38,
+  'bank_account_number':        39,
+  'bir_tin_number':             40,
+  'sss_number':                 41,
+  'philhealth_number':          42,
+  'pag_ibig_number':            43,
+  'id_link':                    44
 };
 
-const hr_mastersheet_excluded_sheets = [
-  'CHANGEME', 
-  'Reg Alerts', 
-  'Resigned'
-];
-
 const leave_request_spreadsheet_id = 'CHANGEME';
-const leave_request_sheet_name = 'CHANGEME';
+const leave_request_sheet_name = 'Form Responses 1';
 const leave_request_start_row = 2;
 
 const leave_request_form_id = 'CHANGEME';
@@ -63,46 +69,51 @@ const leave_request_columns = {
   'employment_type_at_submission':      9,
   'confirmed_by_hr':                    10,
   'year':                               11,
-  'work_days_affected':                 12,
+  'semiannual_period':                  12,
+  'work_days_affected':                 13,
 };
 
-const leaves_tracker_spreadsheet_id = 'CHANGEME';
-const leaves_tracker_sheet_name = 'CHANGEME';
-const leaves_tracker_start_row = 3;
+const leaves_tracker_spreadsheet_id = leave_request_spreadsheet_id;
+const leaves_tracker_sheet_name = 'Leaves Tracker';
+const leaves_tracker_start_row = 7;
 
 const leaves_tracker_columns = {
-  'id_number':                        0,
-  'work_email':                       1,
-  'first_name':                       2,
-  'middle_name':                      3,
-  'last_name':                        4,
-  'employment_type':                  5,
-  'start_date':                       6,
-  'used_vacation_leaves':             7,
-  'used_sick_leaves':                 8,
-  'used_mental_health_leaves':        9,
-  'used_birthday_leaves':             10,
-  'used_offset_leaves':               11,
-  'used_maternity_leaves':            12,
-  'used_paternity_leaves':            13,
-  'total_used_leaves':                14,
-  'remaining_vacation_leaves':        15,
-  'remaining_sick_leaves':            16,
-  'remaining_mental_health_leaves':   17,
-  'remaining_birthday_leaves':        18,
-  'total_remaining_leaves':           19
+  'id_number':                            0,
+  'work_email':                           1,
+  'full_name':                            2,
+  'employment_type':                      3,
+  'start_date':                           4,
+  'tenure':                               5,
+  'used_vacation_leaves_year':            6,
+  'used_vacation_leaves_h1':              7,
+  'used_vacation_leaves_h2':              8,
+  'used_sick_leaves':                     9,
+  'used_birthday_leaves':                 10,
+  'used_mental_health_leaves':            11,
+  'used_offset_leaves':                   12,
+  'used_maternity_leaves':                13,
+  'used_paternity_leaves':                14,
+  'used_bereavement_leaves':              15,
+  'used_leave_with_pay_for_vawc':         16,
+  'used_parental_leave_for_solo_parents': 17, 
+  'used_special_leave_for_women':         18,
+  'total_used_leaves':                    19,
+  'remaining_vacation_leaves_year':       20,
+  'remaining_vacation_leaves_h1':         21,
+  'remaining_vacation_leaves_h2':         22,
+  'remaining_sick_leaves':                23,
+  'remaining_birthday_leaves':            24,
+  'remaining_mental_health_leaves':       25,
+  'total_remaining_leaves':               26
 };
+
+const holidays_sheet_name_suffix = 'Holidays';
+const holidays_start_row = 2;
 
 const holidays_columns = {
   'name': 0,
   'date': 1
 }
 
-const daily_actions_trigger = 'CHANGEME';
-const leave_request_form_response_trigger = 'CHANGEME';
-
-const developer_name = 'CHANGEME';
-const developer_email = 'CHANGEME';
-
-const documentation_name = 'CHANGEME';
-const documentation_link = 'CHANGEME';
+const daily_actions_trigger = 'daily_actions';
+const leave_request_form_response_trigger = 'leave_request_form_response';
