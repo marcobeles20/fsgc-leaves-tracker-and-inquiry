@@ -5,6 +5,8 @@ function leave_request_form_response(e)
   import_leaves_tracker_employees();
 
   format_leave_request_sheet(email);
+
+  delete_leave_request_empty_rows();
 }
 
 function create_leave_request_form_response_trigger() 
