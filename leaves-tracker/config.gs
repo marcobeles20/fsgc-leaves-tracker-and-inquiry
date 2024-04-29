@@ -1,60 +1,8 @@
-const employee_mastersheet_spreadsheet_id = 'CHANGEME';
-const employee_mastersheet_sheet_name = 'CHANGEME';
-const employee_mastersheet_start_row = 3;
-
-const employee_mastersheet_columns = {
-  'id_number':                  0,
-  'work_email':                 1,
-  'full_name':                  2,
-  'first_name':                 3,
-  'middle_name':                4,
-  'last_name':                  5,
-  'nickname':                   6,
-  'sex':                        7,
-  'gender':                     8,
-  'pronouns':                   9,
-  'birthday':                   10,
-  'age':                        11,
-  'mobile_number':              12,
-  'present_address':            13,
-  'permanent_address':          14,
-  'personal_email':             15,
-  'contact_name':               16,
-  'contact_relationship':       17,
-  'contact_cellphone_number':   18,
-  'contact_email':              19,
-  'blood_type':                 20,
-  'allergies':                  21,
-  'medical_conditions':         22,
-  'entity':                     23,
-  'employment_type':            24,
-  'position':                   25,
-  'level':                      26,
-  'manager':                    27,
-  'department':                 28,
-  'start_date':                 29,
-  '1st_month':                  30,
-  '3rd_month':                  31,
-  '5th_month':                  32,
-  'regularized_date':           33,
-  'promotion_date':             34,
-  'end_date':                   35,
-  'employment_agreement_link':  36,
-  'bank_name':                  37,
-  'bank_account_name':          38,
-  'bank_account_number':        39,
-  'bir_tin_number':             40,
-  'sss_number':                 41,
-  'philhealth_number':          42,
-  'pag_ibig_number':            43,
-  'id_link':                    44
-};
-
-const leave_request_spreadsheet_id = 'CHANGEME';
+const leave_request_spreadsheet_id = '********************************************';
 const leave_request_sheet_name = 'Form Responses 1';
 const leave_request_start_row = 2;
 
-const leave_request_form_id = 'CHANGEME';
+const leave_request_form_id = '********************************************';
 
 const leave_request_columns = {
   'timestamp':                          0,
