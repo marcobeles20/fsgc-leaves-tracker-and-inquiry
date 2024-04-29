@@ -8,9 +8,5 @@ function onOpen()
         .addItem('Format Sheet', 'format_leave_request_sheet')
         .addItem('Delete Empty Rows', 'delete_leave_request_empty_rows')
     )
-    .addSubMenu(
-      ui.createMenu('Leaves Tracker')
-        .addItem('Import Employees', 'import_leaves_tracker_employees')
-    )
     .addToUi();
 }
