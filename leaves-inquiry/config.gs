@@ -1,9 +1,9 @@
-const hr_contact_name = 'CHANGEME';
-const hr_contact_medium = 'CHANGEME';
+const hr_contact_name = '******';
+const hr_contact_medium = '**************';
 
-const email_sender_name = 'CHANGEME';
+const email_sender_name = '*************';
 
-const leaves_tracker_spreadsheet_id = 'CHANGEME';
+const leaves_tracker_spreadsheet_id = '********************************************';
 const leaves_tracker_sheet_name = 'Leaves Tracker';
 const leaves_tracker_start_row = 7;
 
@@ -39,14 +39,14 @@ const leaves_tracker_columns = {
   'total_remaining_leaves':               26
 };
 
-const leaves_inquiry_spreadsheet_id = 'CHANGEME';
+const leaves_inquiry_spreadsheet_id = '********************************************';
 const leaves_inquiry_sheet_name = 'Form Responses 1';
 const leaves_inquiry_start_row = 2;
 
-const leaves_inquiry_form_id = 'CHANGEME';
+const leaves_inquiry_form_id = '********************************************';
 
-const leaves_inquiry_form_name = 'CHANGEME'
-const leaves_inquiry_form_link = 'CHANGEME';
+const leaves_inquiry_form_name = 'Leaves Inquiry'
+const leaves_inquiry_form_link = '***********************************';
 
 const leaves_inquiry_columns = {
   'timestamp':      0,
@@ -56,5 +56,5 @@ const leaves_inquiry_columns = {
 const leaves_inquiry_form_response_trigger = "leaves_inquiry_form_response";
 
 const developer_mode = false;
-const developer_email = 'CHANGEME';
-const developer_mode_work_email = 'CHANGEME';
+const developer_email = '**********************';
+const developer_mode_work_email = '*************************';
