@@ -1,6 +1,5 @@
 function daily_actions() 
 {
-  import_leaves_tracker_employees();
   format_leave_request_sheet();
   delete_leave_request_empty_rows();
 }
