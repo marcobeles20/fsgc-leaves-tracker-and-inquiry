@@ -173,7 +173,7 @@ Please note that the above information is current for <b>HR-confirmed</b> leaves
     {
       body +=
 `<br><br>
-<span style="color: red;">**</span> Pursuant to the memorandum entitled <i>Updated General Guidelines on Leaves Policy</i> dated April 19, 2024, mandatory 7 Vacation Leave days to be used per half year, effective May 1, 2024.`;
+<span style="color: red;">**</span> Pursuant to the memorandum entitled <i>Updated General Guidelines on Leaves Policy</i> dated April 29, 2024, mandatory 7 Vacation Leave days to be used per half year, effective May 1, 2024.`;
     }
   }
   else

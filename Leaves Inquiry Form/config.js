@@ -1,30 +1,13 @@
-const leave_request_spreadsheet_id = '********************************************';
-const leave_request_sheet_name = 'Form Responses 1';
-const leave_request_start_row = 2;
+const hr_contact_name = 'Angela';
+const hr_contact_medium = 'Workplace Chat';
 
-const leave_request_form_id = '********************************************';
+const email_sender_name = 'Five Story HR';
 
-const leave_request_columns = {
-  'timestamp':                          0,
-  'email_address':                      1,
-  'full_name':                          2,
-  'entity':                             3,
-  'start_leave_date':                   4,
-  'end_leave_date':                     5,
-  'leave_type':                         6,
-  'leave_reason':                       7,
-  'manager_approval_screenshot_link':   8,
-  'certification_true':                 9,
-  'employment_type_at_submission':      10,
-  'confirmed_by_hr':                    11,
-  'year':                               12,
-  'semiannual_period':                  13,
-  'work_days_affected':                 14
-};
-
-const leaves_tracker_spreadsheet_id = leave_request_spreadsheet_id;
+const leaves_tracker_spreadsheet_id = '1DXAy_SUTnTX_No1R42MPIBiBtRKuK5D4lR0cXvFLZhM';
 const leaves_tracker_sheet_name = 'Leaves Tracker';
 const leaves_tracker_start_row = 7;
+
+const leaves_tracker_reference_date_cell = 'A2';
 
 const leaves_tracker_columns = {
   'id_number':                            0,
@@ -56,13 +39,22 @@ const leaves_tracker_columns = {
   'total_remaining_leaves':               26
 };
 
-const holidays_sheet_name_suffix = 'Holidays';
-const holidays_start_row = 2;
+const leaves_inquiry_spreadsheet_id = '1V0P8b6BWJZQ4YZWmKSU-4LKu5wRscnVD3wIzAc4iy4A';
+const leaves_inquiry_sheet_name = 'Form Responses 1';
+const leaves_inquiry_start_row = 2;
 
-const holidays_columns = {
-  'name': 0,
-  'date': 1
-}
+const leaves_inquiry_form_id = '1NNgTrV6eCI2QoVDu6mhJBn9LSyXNz8yAxnERjVaQ_hA';
 
-const daily_actions_trigger = 'daily_actions';
-const leave_request_form_response_trigger = 'leave_request_form_response';
+const leaves_inquiry_form_name = 'FSGC Leaves Inquiry'
+const leaves_inquiry_form_link = 'https://forms.gle/coFFhge7rFuLVfCs5';
+
+const leaves_inquiry_columns = {
+  'timestamp':      0,
+  'email_address':  1
+};
+
+const leaves_inquiry_form_response_trigger = "leaves_inquiry_form_response";
+
+const developer_mode = false;
+const developer_email = 'marcobeles20@gmail.com';
+const developer_mode_work_email = 'angela@fivestorygroup.com';
