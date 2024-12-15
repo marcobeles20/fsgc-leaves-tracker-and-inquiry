@@ -61,7 +61,7 @@ const leaves_inquiry_form_link = 'https://forms.gle/coFFhge7rFuLVfCs5';
 const leaves_inquiry_columns = {
   'timestamp':      0,
   'email_address':  1
-};
+}; // test
 
 const leaves_inquiry_form_response_trigger = "leaves_inquiry_form_response";
 
