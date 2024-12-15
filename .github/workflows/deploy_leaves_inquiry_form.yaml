@@ -1,0 +1,29 @@
+name: 'Deploy Leaves Inquiry Form'
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'leaves-inquiry-form/**.js'
+      - '.github/workflows/deploy_leaves_inquiry_form.yaml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v2'
+
+      - name: 'Clasp Push'
+        uses: daikikatsuragawa/clasp-action@v1.1.0
+        with:
+          accessToken: '${{ secrets.CLASP_ACCESS_TOKEN }}'
+          idToken: '${{ secrets.CLASP_ID_TOKEN }}'
+          refreshToken: '${{ secrets.CLASP_REFRESH_TOKEN }}'
+          clientId: '${{ secrets.CLASP_CLIENT_ID }}'
+          clientSecret: '${{ secrets.CLASP_CLIENT_SECRET }}'
+          scriptId: '${{ secrets.GAS_SCRIPT_ID_LEAVES_INQUIRY_FORM }}'
+          rootDir: 'leaves-inquiry-form'
+          command: 'push'
