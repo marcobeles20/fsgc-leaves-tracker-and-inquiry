@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'
     paths:
-      - 'leaves-inquiry-form/**.js'
+      - 'leaves-inquiry-form/**'
       - '.github/workflows/deploy_leaves_inquiry_form.yaml'
 
 jobs:
