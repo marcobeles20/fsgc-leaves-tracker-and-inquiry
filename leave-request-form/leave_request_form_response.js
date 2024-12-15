@@ -1,3 +1,12 @@
+/*
+  WARNING: DO NOT MAKE CHANGES DIRECTLY IN THE GOOGLE APPS SCRIPT EDITOR.
+  
+  This project is managed through a GitHub repository. Any changes to the code 
+  should be made in the repository, not directly in the Google Apps Script interface.
+  
+  GitHub Repository: https://github.com/marcobeles20/fsgc-leaves-tracker-and-inquiry
+*/
+
 function leave_request_form_response(e)
 {
   const email = e.response.getRespondentEmail();
