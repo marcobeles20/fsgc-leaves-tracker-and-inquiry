@@ -1,4 +1,4 @@
-const hr_contact_name = 'Angela';
+const hr_contact_name = 'Angela'; // hello!
 const hr_contact_medium = 'Workplace Chat';
 
 const email_sender_name = 'Five Story HR';
