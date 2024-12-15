@@ -1,12 +1,12 @@
-name: 'Deploy Leaves Inquiry Form'
+name: 'Deploy Script - Leave Request Form'
 
 on:
   push:
     branches:
       - 'main'
     paths:
-      - 'leaves-inquiry-form/**'
-      - '.github/workflows/deploy_leaves_inquiry_form.yaml'
+      - 'leave-request-form/**'
+      - '.github/workflows/deploy_script_leave_request_form.yaml'
 
 jobs:
   deploy:
@@ -24,6 +24,6 @@ jobs:
           refreshToken: '${{ secrets.CLASP_REFRESH_TOKEN }}'
           clientId: '${{ secrets.CLASP_CLIENT_ID }}'
           clientSecret: '${{ secrets.CLASP_CLIENT_SECRET }}'
-          scriptId: '${{ secrets.GAS_SCRIPT_ID_LEAVES_INQUIRY_FORM }}'
-          rootDir: 'leaves-inquiry-form'
+          scriptId: '${{ secrets.GAS_SCRIPT_ID_LEAVE_REQUEST_FORM }}'
+          rootDir: 'leave-request-form'
           command: 'push'
