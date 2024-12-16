@@ -1,0 +1,24 @@
+name: 'YAML Lint'
+
+on:
+  push:
+    paths:
+      - '**/*.yaml'
+      - '**/*.yml'
+      - '.yamllint.yaml'
+      - 'Makefile'
+      - '.github/workflows/yaml_lint.yaml'
+
+jobs:
+  lint_yaml:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      - name: 'Checkout'
+        uses: 'actions/checkout@v4'
+
+      - name: 'Install yamllint'
+        run: 'pip install yamllint'
+
+      - name: 'Run yamllint'
+        run: 'make yaml-lint'
