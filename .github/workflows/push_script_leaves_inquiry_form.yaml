@@ -1,4 +1,4 @@
-name: 'Deploy Script - Leaves Inquiry Form'
+name: 'Push Script - Leaves Inquiry Form'
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - 'main'
     paths:
       - 'scripts/leaves-inquiry-form/**'
-      - '.github/workflows/deploy_script_leaves_inquiry_form.yaml'
+      - '.github/workflows/push_script_leaves_inquiry_form.yaml'
 
 jobs:
-  deploy:
+  push:
     runs-on: ubuntu-latest
 
     steps:

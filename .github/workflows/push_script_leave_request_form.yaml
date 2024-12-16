@@ -1,4 +1,4 @@
-name: 'Deploy Script - Leave Request Form'
+name: 'Push Script - Leave Request Form'
 
 on:
   push:
@@ -6,10 +6,10 @@ on:
       - 'main'
     paths:
       - 'scripts/leave-request-form/**'
-      - '.github/workflows/deploy_script_leave_request_form.yaml'
+      - '.github/workflows/push_script_leave_request_form.yaml'
 
 jobs:
-  deploy:
+  push:
     runs-on: ubuntu-latest
 
     steps:

@@ -10,7 +10,7 @@ on:
       - '.github/workflows/yaml_lint.yaml'
 
 jobs:
-  lint_yaml:
+  lint:
     runs-on: 'ubuntu-latest'
 
     steps:
