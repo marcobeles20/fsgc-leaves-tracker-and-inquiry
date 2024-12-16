@@ -17,7 +17,7 @@ jobs:
         uses: 'actions/checkout@v2'
 
       - name: 'Clasp Push'
-        uses: daikikatsuragawa/clasp-action@v1.1.0
+        uses: 'daikikatsuragawa/clasp-action@v1.1.0'
         with:
           accessToken: '${{ secrets.CLASP_ACCESS_TOKEN }}'
           idToken: '${{ secrets.CLASP_ID_TOKEN }}'
