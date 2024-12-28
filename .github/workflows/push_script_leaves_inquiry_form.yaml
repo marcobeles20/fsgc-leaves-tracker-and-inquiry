@@ -1,6 +1,7 @@
 name: 'Push Script - Leaves Inquiry Form'
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
