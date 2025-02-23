@@ -57,115 +57,149 @@ You are receiving this email because you inquired about your leaves through the 
     <th width="100">Remaining</th>
   </tr>`;
 
-    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['tenure']] == "Above 1 Year")
+    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular")
     {
       body +=
-  `<tr>
-    <td>Vacation Leave (H1) <span style="color: red;">**</span></td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_vacation_leaves_h1']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['remaining_vacation_leaves_h1']]}</center></td>
-  </tr>
-  <tr>
-    <td>Vacation Leave (H2) <span style="color: red;">**</span></td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_vacation_leaves_h2']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['remaining_vacation_leaves_h2']]}</center></td>
-  </tr>`;
+`<tr>
+  <td>Vacation Leave <span style="color: red;">**</span></td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_vacation_leaves']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_vacation_leaves']]}</center></td>
+</tr>`;
     }
-    else
+    
+    if(!(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular") || leaves_data[leaves_tracker_columns['used_personal_leaves']] > 0)
     {
       body +=
-  `<tr>
-    <td>Vacation Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_vacation_leaves_year']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['remaining_vacation_leaves_year']]}</center></td>
-  </tr>`;
+`<tr>
+  <td>Personal Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_personal_leaves']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_personal_leaves']]}</center></td>
+</tr>`;
     }
 
-    body +=
-  `<tr>
-    <td>Sick Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_sick_leaves']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['remaining_sick_leaves']]}</center></td>
-  </tr>
-  <tr>
-    <td>Birthday Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_birthday_leaves']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['remaining_birthday_leaves']]}</center></td>
-  </tr>
-  <tr>
-    <td>Mental Health Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_mental_health_leaves']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['remaining_mental_health_leaves']]}</center></td>
-  </tr>`;
+    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular")
+    {
+      body += 
+`<tr>
+  <td>Sick Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_sick_leaves']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_sick_leaves']]}</center></td>
+</tr>`;
+    }
 
-    if(leaves_data[leaves_tracker_columns['used_offset_leaves']] > 0)
+    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time")
+    {
+      body +=
+`<tr>
+  <td>Birthday Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_birthday_leaves']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_birthday_leaves']]}</center></td>
+</tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular")
+    {
+      body += 
+`<tr>
+  <td>Wellness Leave H1</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_wellness_leaves_h1']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_wellness_leaves_h1']]}</center></td>
+</tr>
+<tr>
+  <td>Wellness Leave H2</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_wellness_leaves_h2']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_wellness_leaves_h2']]}</center></td>
+</tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['used_bereavement_leaves']] > 0)
+    {
+      body +=
+`<tr>
+  <td>Bereavement Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_bereavement_leaves']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_bereavement_leaves']]}</center></td>
+</tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['used_promotion_leaves']] > 0)
     {
       body += 
 ` <tr>
-    <td>Offset</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_offset_leaves']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
+  <td>Promotion Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_promotion_leaves']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['used_half-day_offset_leaves']] > 0)
+    {
+      body += 
+`<tr>
+  <td>Half-day Offset</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_half-day_offset_leaves']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
+    }
+
+    if(leaves_data[leaves_tracker_columns['used_full-day_offset_leaves']] > 0)
+    {
+      body += 
+`<tr>
+  <td>Full-day Offset</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_full-day_offset_leaves']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
     }
 
     if(leaves_data[leaves_tracker_columns['used_maternity_leaves']] > 0)
     {
       body +=
-` <tr>
-    <td>Maternity Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_maternity_leaves']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
+`<tr>
+  <td>Maternity Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_maternity_leaves']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
     }
 
     if(leaves_data[leaves_tracker_columns['used_paternity_leaves']] > 0)
     {
       body +=
-` <tr>
-    <td>Paternity Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_paternity_leaves']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
-    }
-    
-    if(leaves_data[leaves_tracker_columns['used_bereavement_leaves']] > 0)
-    {
-      body +=
-` <tr>
-    <td>Bereavement Leave</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_bereavement_leaves']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
+`<tr>
+  <td>Paternity Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_paternity_leaves']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
     }
 
     if(leaves_data[leaves_tracker_columns['used_leave_with_pay_for_vawc']] > 0)
     {
       body +=
-` <tr>
-    <td>Leave with pay for Victims of Violence Against Women and their Children (VAWC)</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_leave_with_pay_for_vawc']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
+`<tr>
+  <td>Leave with pay for Victims of Violence Against Women and their Children (VAWC)</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_leave_with_pay_for_vawc']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
     }
 
     if(leaves_data[leaves_tracker_columns['used_parental_leave_for_solo_parents']] > 0)
     {
       body +=
-` <tr>
-    <td>Parental Leave for Solo Parents</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_parental_leave_for_solo_parents']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
+`<tr>
+  <td>Parental Leave for Solo Parents</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_parental_leave_for_solo_parents']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
     }
 
     if(leaves_data[leaves_tracker_columns['used_special_leave_for_women']] > 0)
     {
       body +=
-` <tr>
-    <td>Special Leave for Women</td>
-    <td><center>${leaves_data[leaves_tracker_columns['used_special_leave_for_women']]}</center></td>
-    <td><center>N/A</center></td>
-  </tr>`;
+`<tr>
+  <td>Special Leave for Women</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_special_leave_for_women']]}</center></td>
+  <td><center>N/A</center></td>
+</tr>`;
     }
 
     body += 
@@ -177,13 +211,6 @@ You are receiving this email because you inquired about your leaves through the 
 </table>
 <br>
 Please note that the above information is current for <b>HR-confirmed</b> leaves as of <b>${formatted_reference_date}</b>.`;
-
-  if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['tenure']] == "Above 1 Year")
-    {
-      body +=
-`<br><br>
-<span style="color: red;">**</span> Pursuant to the memorandum entitled <i>Updated General Guidelines on Leaves Policy</i> dated April 29, 2024, mandatory 7 Vacation Leave days to be used per half year, effective May 1, 2024.`;
-    }
   }
   else
   {
