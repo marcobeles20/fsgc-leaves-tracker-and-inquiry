@@ -69,5 +69,5 @@ const leaves_inquiry_columns = {
 const leaves_inquiry_form_response_trigger = "leaves_inquiry_form_response";
 
 const developer_mode = false;
-const developer_email = 'mjb.obeles@gmail.com';
+const developer_email = '56762146+marcobeles20@users.noreply.github.com';
 const developer_mode_work_email = 'angela@fivestorygroup.com';
