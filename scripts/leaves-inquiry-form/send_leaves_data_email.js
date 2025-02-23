@@ -61,7 +61,7 @@ You are receiving this email because you inquired about your leaves through the 
     {
       body +=
 `<tr>
-  <td>Vacation Leave <span style="color: red;">**</span></td>
+  <td>Vacation Leave</td>
   <td><center>${leaves_data[leaves_tracker_columns['used_vacation_leaves']]}</center></td>
   <td><center>${leaves_data[leaves_tracker_columns['remaining_vacation_leaves']]}</center></td>
 </tr>`;
