@@ -57,7 +57,7 @@ You are receiving this email because you inquired about your leaves through the 
     <th width="100">Remaining</th>
   </tr>`;
 
-    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['tenure']] == "Above 1 Year")
+    if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular")
     {
       body +=
   `<tr>
@@ -178,7 +178,7 @@ You are receiving this email because you inquired about your leaves through the 
 <br>
 Please note that the above information is current for <b>HR-confirmed</b> leaves as of <b>${formatted_reference_date}</b>.`;
 
-  if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['tenure']] == "Above 1 Year")
+  if(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular")
     {
       body +=
 `<br><br>
