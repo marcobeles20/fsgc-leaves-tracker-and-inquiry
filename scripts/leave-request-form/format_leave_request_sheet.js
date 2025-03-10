@@ -18,6 +18,18 @@ function format_leave_request_sheet(email = null)
   if(email != null)
   { 
     const row = extract_last_row_number(email);
+
+    // Number Format - Start Leave Date
+    leave_request_sheet.getRange(
+      row,
+      leave_request_columns['start_leave_date'] + 1
+    ).setNumberFormat(date_format);
+
+    // Number Format - End Leave Date
+    leave_request_sheet.getRange(
+      row,
+      leave_request_columns['end_leave_date'] + 1
+    ).setNumberFormat(date_format);
   
     // Clip Screenshot Link
     leave_request_sheet.getRange(
@@ -80,17 +92,39 @@ function format_leave_request_sheet(email = null)
       1
     ).setWrapStrategy(SpreadsheetApp.WrapStrategy.CLIP);
 
-    // Formula
+    // Number Format and Formula
+    const start_leave_date_number_format = [];
+    const end_leave_date_number_format = [];
+
     const year_formulas = [];
     const semiannual_period_formulas = [];
     const work_days_affected_formulas = [];
 
     for(let row = leave_request_start_formula_iteration_row; row <= last_row; row++)
     {
+      start_leave_date_number_format.push([date_format]);
+      end_leave_date_number_format.push([date_format]);
+
       year_formulas.push([year_formula(row)]);
       semiannual_period_formulas.push([semiannual_period_formula(row)]);
       work_days_affected_formulas.push([work_days_affected_formula(row)]);
     }
+
+    // Number Format - Start Leave Date
+    leave_request_sheet.getRange(
+      leave_request_start_formula_iteration_row, 
+      leave_request_columns['start_leave_date'] + 1,
+      last_row - leave_request_start_formula_iteration_row + 1,
+      1
+    ).setNumberFormats(start_leave_date_number_format);
+
+    // Number Format - End Leave Date
+    leave_request_sheet.getRange(
+      leave_request_start_formula_iteration_row, 
+      leave_request_columns['end_leave_date'] + 1,
+      last_row - leave_request_start_formula_iteration_row + 1,
+      1
+    ).setNumberFormats(end_leave_date_number_format);
 
     // Formula - Year
     leave_request_sheet.getRange(
