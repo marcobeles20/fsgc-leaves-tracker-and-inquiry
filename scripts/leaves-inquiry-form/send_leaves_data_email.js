@@ -122,6 +122,16 @@ You are receiving this email because you inquired about your leaves through the 
 </tr>`;
     }
 
+    if(!(leaves_data[leaves_tracker_columns['employment_type']] == "Full-time" && leaves_data[leaves_tracker_columns['employment_status']] == "Regular") || leaves_data[leaves_tracker_columns['used_loyalty_leaves']] > 0)
+    {
+      body +=
+`<tr>
+  <td>Loyalty Leave</td>
+  <td><center>${leaves_data[leaves_tracker_columns['used_loyalty_leaves']]}</center></td>
+  <td><center>${leaves_data[leaves_tracker_columns['remaining_loyalty_leaves']]}</center></td>
+</tr>`;
+    }
+
     if(leaves_data[leaves_tracker_columns['used_promotion_leaves']] > 0)
     {
       body += 
