@@ -23,12 +23,13 @@ const leave_request_columns = {
   'leave_type':                         6,
   'leave_reason':                       7,
   'manager_approval_screenshot_link':   8,
-  'certification_true':                 9,
-  'employment_type_at_submission':      10,
-  'confirmed_by_hr':                    11,
-  'year':                               12,
-  'semiannual_period':                  13,
-  'work_days_affected':                 14
+  'ceo_approval_screenshot_link':       9,
+  'certification_true':                 10,
+  'employment_type_at_submission':      11,
+  'confirmed_by_hr':                    12,
+  'year':                               13,
+  'semiannual_period':                  14,
+  'work_days_affected':                 15
 };
 
 const leaves_tracker_spreadsheet_id = leave_request_spreadsheet_id;
