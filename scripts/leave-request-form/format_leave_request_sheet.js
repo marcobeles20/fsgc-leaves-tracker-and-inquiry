@@ -85,7 +85,7 @@ function format_leave_request_sheet(email = null)
     const semiannual_period_formulas = [];
     const work_days_affected_formulas = [];
 
-    for(let row = leave_request_start_row; row <= last_row; row++)
+    for(let row = leave_request_start_formula_iteration_row; row <= last_row; row++)
     {
       year_formulas.push([year_formula(row)]);
       semiannual_period_formulas.push([semiannual_period_formula(row)]);
@@ -94,25 +94,25 @@ function format_leave_request_sheet(email = null)
 
     // Formula - Year
     leave_request_sheet.getRange(
-      leave_request_start_row, 
+      leave_request_start_formula_iteration_row, 
       leave_request_columns['year'] + 1,
-      last_row - leave_request_start_row + 1,
+      last_row - leave_request_start_formula_iteration_row + 1,
       1
     ).setFormulas(year_formulas);
 
     // Formula - Semiannual Period
     leave_request_sheet.getRange(
-      leave_request_start_row, 
+      leave_request_start_formula_iteration_row, 
       leave_request_columns['semiannual_period'] + 1,
-      last_row - leave_request_start_row + 1,
+      last_row - leave_request_start_formula_iteration_row + 1,
       1
     ).setFormulas(semiannual_period_formulas);
 
     // Formula - Work Days Affected
     leave_request_sheet.getRange(
-      leave_request_start_row, 
+      leave_request_start_formula_iteration_row, 
       leave_request_columns['work_days_affected'] + 1,
-      last_row - leave_request_start_row + 1,
+      last_row - leave_request_start_formula_iteration_row + 1,
       1
     ).setFormulas(work_days_affected_formulas);
   }

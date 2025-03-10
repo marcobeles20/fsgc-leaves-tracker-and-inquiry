@@ -10,6 +10,7 @@
 const leave_request_spreadsheet_id = '1DXAy_SUTnTX_No1R42MPIBiBtRKuK5D4lR0cXvFLZhM';
 const leave_request_sheet_name = 'Form Responses 1';
 const leave_request_start_row = 2;
+const leave_request_start_formula_iteration_row = 2700; // Set to leave_request_start_row for default operation but may exceed maximum execution time for large records
 
 const leave_request_form_id = '1cc_Qqlje5hLwoi3SiyznN7VKG1cmQ37CtyXNxbSuj4w';
 
