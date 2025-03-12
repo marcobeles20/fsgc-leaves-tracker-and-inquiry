@@ -122,7 +122,7 @@ You are receiving this email because you inquired about your leaves through the 
 </tr>`;
     }
 
-    if(leaves_data[leaves_tracker_columns['used_loyalty_leaves']] > 0)
+    if(leaves_data[leaves_tracker_columns['used_loyalty_leaves']] > 0 || leaves_data[leaves_tracker_columns['remaining_loyalty_leaves']] > 0)
     {
       body +=
 `<tr>
