@@ -63,16 +63,14 @@ const leaves_tracker_columns = {
   'used_leave_with_pay_for_vawc':         20,
   'used_parental_leave_for_solo_parents': 21, 
   'used_special_leave_for_women':         22,
-  'total_used_leaves':                    23,
-  'remaining_vacation_leaves':            24,
-  'remaining_personal_leaves':            25,
-  'remaining_sick_leaves':                26,
-  'remaining_birthday_leaves':            27,
-  'remaining_wellness_leaves_h1':         28,
-  'remaining_wellness_leaves_h2':         29,
-  'remaining_bereavement_leaves':         30,
-  'remaining_loyalty_leaves':             31,
-  'total_remaining_leaves':               32
+  'remaining_vacation_leaves':            23,
+  'remaining_personal_leaves':            24,
+  'remaining_sick_leaves':                25,
+  'remaining_birthday_leaves':            26,
+  'remaining_wellness_leaves_h1':         27,
+  'remaining_wellness_leaves_h2':         28,
+  'remaining_bereavement_leaves':         29,
+  'remaining_loyalty_leaves':             30
 };
 
 const holidays_sheet_name_suffix = 'Holidays';

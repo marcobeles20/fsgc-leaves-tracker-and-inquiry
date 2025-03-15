@@ -213,12 +213,7 @@ You are receiving this email because you inquired about your leaves through the 
     }
 
     body += 
-` <tr>
-    <th><center>Total</center></th>
-    <td><center>${leaves_data[leaves_tracker_columns['total_used_leaves']]}</center></td>
-    <td><center>${leaves_data[leaves_tracker_columns['total_remaining_leaves']]}</center></td>
-  </tr>
-</table>
+`</table>
 <br>
 Please note that the above information is current for <b>HR-confirmed</b> leaves as of <b>${formatted_reference_date}</b>.`;
   }
