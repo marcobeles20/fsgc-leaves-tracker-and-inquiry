@@ -28,7 +28,7 @@ const leave_request_columns = {
   'manager_approval_screenshot_link':   8,
   'ceo_approval_screenshot_link':       9,
   'certification_true':                 10,
-  'employment_type_at_submission':      11,
+  'start_date_at_submission':           11,
   'confirmed_by_hr':                    12,
   'year':                               13,
   'semiannual_period':                  14,

@@ -66,21 +66,21 @@ function format_leave_request_sheet(email = null)
       leaves_tracker_sheet.getLastColumn()
     ).getValues();
 
-    let employment_type = "ERROR";
+    let start_date = "ERROR";
 
     for(const i in entries)
     {
       if(entries[i][leaves_tracker_columns['work_email']] != email)
         continue;
 
-      employment_type = entries[i][leaves_tracker_columns['employment_type']];
+      start_date = entries[i][leaves_tracker_columns['start_date']];
       break;
     }
 
     leave_request_sheet.getRange(
       row, 
-      leave_request_columns['employment_type_at_submission'] + 1
-    ).setValue(employment_type);
+      leave_request_columns['start_date_at_submission'] + 1
+    ).setValue(start_date);
   }
   else
   {
@@ -165,7 +165,7 @@ function format_leave_request_sheet(email = null)
 
   const red = SpreadsheetApp.newConditionalFormatRule()
     .whenFormulaSatisfied(
-      `=AND($${column_number_to_letter(leave_request_columns['email_address'] + 1)}2 <> "", OR($${column_number_to_letter(leave_request_columns['employment_type_at_submission'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['employment_type_at_submission'] + 1)}2 = "ERROR", $${column_number_to_letter(leave_request_columns['year'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['year'] + 1)}2 = "ERROR", $${column_number_to_letter(leave_request_columns['semiannual_period'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['semiannual_period'] + 1)}2 = "ERROR", $${column_number_to_letter(leave_request_columns['work_days_affected'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['work_days_affected'] + 1)}2 = "ERROR"))`
+      `=AND($${column_number_to_letter(leave_request_columns['email_address'] + 1)}2 <> "", OR($${column_number_to_letter(leave_request_columns['start_date_at_submission'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['start_date_at_submission'] + 1)}2 = "ERROR", $${column_number_to_letter(leave_request_columns['year'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['year'] + 1)}2 = "ERROR", $${column_number_to_letter(leave_request_columns['semiannual_period'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['semiannual_period'] + 1)}2 = "ERROR", $${column_number_to_letter(leave_request_columns['work_days_affected'] + 1)}2 = "", $${column_number_to_letter(leave_request_columns['work_days_affected'] + 1)}2 = "ERROR"))`
     )
     .setBackground('#F4C7C3')
     .setRanges([rule_range])
