@@ -1,4 +1,6 @@
 name: 'Push Script - Leave Request Form'
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:

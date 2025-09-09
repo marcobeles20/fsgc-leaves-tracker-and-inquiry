@@ -1,4 +1,6 @@
 name: 'Push Script - Leaves Inquiry Form'
+permissions:
+  contents: read
 
 on:
   workflow_dispatch:
